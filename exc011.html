@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font: normal 18pt Arial;
+
+        }
+        input {
+            font: normal 18pt Arial;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificando Nacionalidade</h1>
+    País que nasceu: <input type="text" name="pais" id="pais">
+    <input type="button" value="ENTER" onclick="calcula()">
+    <div id="sla">
+        
+    </div>
+    <script>
+        function calcula() {
+            var teste = document.querySelector('input#pais')
+            var p = document.getElementById("sla")
+            var pa = teste.value.toUpperCase()
+            if (pa == 'BRASIL') {
+                var nac = "Brasileiro"
+            } else {
+                var nac = "Estrangeiro"
+            }
+
+            p.innerHTML = `<p>Você é ${nac}!</p>`
+        }
+        
+    </script>
+</body>
+</html>

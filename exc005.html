@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background: rgb(59, 59, 179);
+            color: white;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1> Iniciando estudos com DOM</h1>
+    <p id="msg"> Aqui vai o resultado</p>
+    <p> Aprenda <strong> JavaScript. </strong></p>
+    <p name="msg2"> Aprendendo a usar o <strong> DOM</strong> em JavaScript</p>
+    <div id="msg3">Clique em mim</div>
+    <script>
+
+        // Seleção de elementos por ID (1° P)
+
+        var d1 = window.document.getElementById("msg")
+        d1.style.background = 'green' // Modificando o fundo do texto
+        d1.innerText += ' Estou aguardando...' //Modificando o texto da div HTML por JavaScript
+
+
+        // Seleção de elementos por marca (2° p)
+
+        var p1 = window.document.getElementsByTagName('p')/* 'p' = Parágrafo */[1]// num 1 = segundo elemento
+        p1.style.color = 'red'  // Mudando a cor de um elemento html no JavaScript
+        document.write('<br/><br/>Está escrito assim: ' + p1.innerHTML) //ou innerText que é melhor para o alert 
+        var corpo = document.body
+        corpo.style.background = 'black' // deixa o fundo preto
+
+
+        // Seleção de elementos por nome (3° p)
+
+        var d2 = document.getElementsByName("msg2")[0]
+        d2.innerText += ', tentando né'
+        
+        // Seleção por query, mais recente (4°p)
+        var d3 = document.querySelector('div#msg3')// "#" se for ID "." se for Class
+        d3.innerText += ', se quiser.'
+    </script>
+
+
+</body>
+</html>
